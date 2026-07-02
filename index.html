@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>儿童互动答题小游戏音效 Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app" aria-live="polite">
+    <div class="sky-shape cloud cloud-a"></div>
+    <div class="sky-shape cloud cloud-b"></div>
+    <div class="sky-shape star-bg star-a">★</div>
+    <div class="sky-shape star-bg star-b">★</div>
+
+    <section class="screen is-active" id="start-screen" data-screen="start">
+      <div class="card hero-card pop-in">
+        <div class="mascot" aria-hidden="true">🐻</div>
+        <p class="eyebrow">音画同步 · 互动反馈</p>
+        <h1>奇妙答题音效 Demo</h1>
+        <p class="intro">点一点、听一听：按钮、转场、答对奖励和答错提示都由 Web Audio API 实时生成。</p>
+        <button class="primary-btn" id="start-btn" type="button">开始答题</button>
+      </div>
+    </section>
+
+    <section class="screen" id="quiz-screen" data-screen="quiz">
+      <div class="card quiz-card">
+        <div class="progress-pill">第 1 题 / 共 1 题</div>
+        <h2>1 + 1 等于几？</h2>
+        <div class="answer-grid" role="group" aria-label="答案选项">
+          <button class="answer-btn" type="button" data-answer="1">1</button>
+          <button class="answer-btn" type="button" data-answer="2">2</button>
+          <button class="answer-btn" type="button" data-answer="3">3</button>
+          <button class="answer-btn" type="button" data-answer="4">4</button>
+        </div>
+        <p class="hint">选择答案后，会立刻播放对应反馈音效。</p>
+      </div>
+    </section>
+
+    <section class="screen feedback-screen" id="correct-screen" data-screen="correct">
+      <div class="card feedback-card success-card">
+        <div class="burst" aria-hidden="true">
+          <span>⭐</span><span>✨</span><span>🌟</span><span>⭐</span>
+        </div>
+        <div class="feedback-icon bounce" aria-hidden="true">🎉</div>
+        <h2>答对啦！</h2>
+        <p>奖励铃铛和星星动画一起出现，适合做儿童教学互动反馈。</p>
+        <button class="primary-btn" id="finish-btn" type="button">查看结果</button>
+      </div>
+    </section>
+
+    <section class="screen feedback-screen" id="wrong-screen" data-screen="wrong">
+      <div class="card feedback-card wrong-card">
+        <div class="feedback-icon wobble" aria-hidden="true">🌈</div>
+        <h2>再试一次～</h2>
+        <p>错误提示音短促、柔和，不会吓到小朋友。</p>
+        <button class="secondary-btn" id="retry-btn" type="button">重新选择</button>
+      </div>
+    </section>
+
+    <section class="screen" id="end-screen" data-screen="end">
+      <div class="card hero-card pop-in">
+        <div class="mascot" aria-hidden="true">🏆</div>
+        <p class="eyebrow">Demo 完成</p>
+        <h2>你获得了小星星徽章！</h2>
+        <p class="intro">这个页面展示了纯前端音效、动画反馈和手机端布局。</p>
+        <button class="primary-btn" id="again-btn" type="button">再玩一次</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
